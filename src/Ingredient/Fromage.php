@@ -8,6 +8,6 @@ class Fromage extends Ingredient
 {
     public function __construct()
     {
-        parent::__construct('fromage', true);
+        parent::__construct('fromage', true, true);
     }
 }

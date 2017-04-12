@@ -8,6 +8,6 @@ class Pain extends Ingredient
 {
     public function __construct()
     {
-        parent::__construct('pain', true);
+        parent::__construct('pain', true, true);
     }
 }

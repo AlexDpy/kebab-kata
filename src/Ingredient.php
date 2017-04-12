@@ -26,7 +26,7 @@ class Ingredient implements IngredientInterface
      * @param        $vegetarian
      * @param bool   $pescetarian
      */
-    public function __construct($name, $vegetarian, $pescetarian = false)
+    public function __construct($name, $vegetarian, $pescetarian = true)
     {
         $this->name = $name;
         $this->vegetarian = $vegetarian;

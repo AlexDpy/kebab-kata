@@ -8,6 +8,6 @@ class Oignon extends Ingredient
 {
     public function __construct()
     {
-        parent::__construct('oignon', true);
+        parent::__construct('oignon', true, true);
     }
 }

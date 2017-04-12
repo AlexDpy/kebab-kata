@@ -28,13 +28,14 @@ class Kebab
         return true;
     }
 
-    public function isPescterian()
+    public function isPescetarian()
     {
         foreach ($this->ingredients as $ingredient) {
-            if (!$ingredient->isPescterian()) {
+            if (!$ingredient->isPescetarian()) {
                 return false;
             }
         }
+        return true;
     }
 
     public function addIngredient(Ingredient $ingredient) {

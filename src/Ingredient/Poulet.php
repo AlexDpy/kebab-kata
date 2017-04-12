@@ -8,6 +8,6 @@ class Poulet extends Ingredient
 {
     public function __construct()
     {
-        parent::__construct('poulet', false);
+        parent::__construct('poulet', false, false);
     }
 }

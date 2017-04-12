@@ -45,10 +45,10 @@ class KebabTest extends TestCase
             new Ingredient\Fromage(),
         ]);
 
-        $this->assertTrue($kebab->isPescterian());
+        $this->assertTrue($kebab->isPescetarian());
     }
 
-    public function testIsNotPescterian()
+    public function testIsPescterianWithCrevettes()
     {
         $kebab = new Kebab([
             new Ingredient\Pain(),
@@ -59,6 +59,21 @@ class KebabTest extends TestCase
             new Ingredient\Crevette(),
         ]);
 
-        $this->assertFalse($kebab->isPescterian());
+        $this->assertTrue($kebab->isPescetarian());
+    }
+
+    public function testIsPescterianWithCrevettesAndMeat()
+    {
+        $kebab = new Kebab([
+            new Ingredient\Pain(),
+            new Ingredient\Salade(),
+            new Ingredient\Tomate(),
+            new Ingredient\Oignon(),
+            new Ingredient\Fromage(),
+            new Ingredient\Crevette(),
+            new Ingredient\Boeuf(),
+        ]);
+
+        $this->assertFalse($kebab->isPescetarian());
     }
 }

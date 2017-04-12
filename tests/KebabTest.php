@@ -34,4 +34,31 @@ class KebabTest extends TestCase
 
         $this->assertFalse($kebab->isVegetarian());
     }
+
+    public function testIsPescterian()
+    {
+        $kebab = new Kebab([
+            new Ingredient\Pain(),
+            new Ingredient\Salade(),
+            new Ingredient\Tomate(),
+            new Ingredient\Oignon(),
+            new Ingredient\Fromage(),
+        ]);
+
+        $this->assertTrue($kebab->isPescterian());
+    }
+
+    public function testIsNotPescterian()
+    {
+        $kebab = new Kebab([
+            new Ingredient\Pain(),
+            new Ingredient\Salade(),
+            new Ingredient\Tomate(),
+            new Ingredient\Oignon(),
+            new Ingredient\Fromage(),
+            new Ingredient\Crevette(),
+        ]);
+
+        $this->assertFalse($kebab->isPescterian());
+    }
 }

@@ -27,4 +27,13 @@ class Kebab
 
         return true;
     }
+
+    public function isPescterian()
+    {
+        foreach ($this->ingredients as $ingredient) {
+            if (!$ingredient->isPescterian()) {
+                return false;
+            }
+        }
+    }
 }

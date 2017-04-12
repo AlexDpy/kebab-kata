@@ -13,7 +13,7 @@ $kebab = new Kebab([
     new Ingredient('boeuf', false),
 ]);
 
-dump($kebab);
+echo($kebab);
 
 
 dump($kebab->isVegetarian());

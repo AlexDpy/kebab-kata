@@ -42,4 +42,12 @@ class Ingredient implements IngredientInterface
     {
         return $this->pescetarian;
     }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
 }

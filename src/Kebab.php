@@ -9,7 +9,7 @@ class Kebab
      */
     private $ingredients;
 
-    public function __construct(array $ingredients)
+    public function __construct(array $ingredients = [])
     {
         $this->ingredients = $ingredients;
     }
@@ -35,5 +35,27 @@ class Kebab
                 return false;
             }
         }
+    }
+
+    public function addIngredient(Ingredient $ingredient) {
+        $this->ingredients[] = $ingredient;
+    }
+
+    /**
+     * @return IngredientInterface[]
+     */
+    public function getIngredients()
+    {
+        return $this->ingredients;
+    }
+
+
+    public function __toString()
+    {
+        $list = "";
+        foreach ($this->ingredients as $ingredient) {
+            $list .= $ingredient->getName().'|';
+        }
+        return $list;
     }
 }

@@ -2,6 +2,9 @@
 
 namespace Kata;
 
+use Kata\Ingredient\Fromage;
+use Kata\Ingredient\Oignon;
+
 class Kebab
 {
     /**
@@ -58,5 +61,33 @@ class Kebab
             $list .= $ingredient->getName().'|';
         }
         return $list;
+    }
+
+    public function doubleFromage() {
+        $newKebab = new Kebab();
+
+        foreach ($this->getIngredients() as $ingredient) {
+            $newKebab->addIngredient($ingredient);
+            if ($ingredient instanceof Fromage) {
+
+                $newKebab->addIngredient(new Fromage());
+            }
+        }
+        return $newKebab;
+    }
+
+    public function removeOignons() {
+
+        $newKebab = new Kebab();
+
+        foreach ($this->getIngredients() as $ingredient) {
+
+            if ($ingredient instanceof Oignon) {
+                continue;
+            }
+            $newKebab->addIngredient($ingredient);
+        }
+        return $newKebab;
+
     }
 }

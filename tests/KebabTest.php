@@ -4,6 +4,7 @@ namespace Tests\Kata;
 
 use Kata\Ingredient;
 use Kata\Kebab;
+use Kata\KebabBuilder;
 use PHPUnit\Framework\TestCase;
 
 class KebabTest extends TestCase
@@ -75,5 +76,41 @@ class KebabTest extends TestCase
         ]);
 
         $this->assertFalse($kebab->isPescetarian());
+    }
+
+    public function testDoubleFromage()
+    {
+        $kebab = new Kebab([
+            new Ingredient\Pain(),
+            new Ingredient\Salade(),
+            new Ingredient\Tomate(),
+            new Ingredient\Oignon(),
+            new Ingredient\Fromage(),
+            new Ingredient\Crevette(),
+            new Ingredient\Boeuf(),
+        ]);
+
+        $this->assertEquals(
+            'pain|salade|tomate|oignon|fromage|fromage|crevette|boeuf|',
+            $kebab->doubleFromage()
+        );
+    }
+
+    public function testRemoveOignon()
+    {
+        $kebab = new Kebab([
+            new Ingredient\Pain(),
+            new Ingredient\Salade(),
+            new Ingredient\Tomate(),
+            new Ingredient\Oignon(),
+            new Ingredient\Fromage(),
+            new Ingredient\Crevette(),
+            new Ingredient\Boeuf(),
+        ]);
+
+        $this->assertEquals(
+            'pain|salade|tomate|fromage|crevette|boeuf|',
+            $kebab->removeOignons()
+        );
     }
 }

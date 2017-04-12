@@ -5,15 +5,17 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use Kata\Ingredient;
 use Kata\Kebab;
 
+
+
 $kebab = new Kebab([
-    new Ingredient('pain', true),
-    new Ingredient('salade', true),
-    new Ingredient('tomate', true),
-    new Ingredient('oignon', true),
-    new Ingredient('boeuf', false),
+    new Ingredient\Pain,
+    new Ingredient\Salade,
+    new Ingredient\Tomate,
+    new Ingredient\Oignon,
+    new Ingredient\Boeuf,
 ]);
 
-echo($kebab);
+echo($kebab->removeOignons());
 
 
-dump($kebab->isVegetarian());
+//dump($kebab->isVegetarian());

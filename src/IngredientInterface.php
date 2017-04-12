@@ -13,4 +13,8 @@ interface IngredientInterface
      * @return bool
      */
     public function isPescetarian();
+
+    public function isOignon();
+
+    public function isFromage();
 }

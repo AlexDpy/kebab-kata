@@ -68,7 +68,7 @@ class Kebab
 
         foreach ($this->getIngredients() as $ingredient) {
             $newKebab->addIngredient($ingredient);
-            if ($ingredient instanceof Fromage) {
+            if ($ingredient->isFromage()) {
 
                 $newKebab->addIngredient(new Fromage());
             }
@@ -82,7 +82,7 @@ class Kebab
 
         foreach ($this->getIngredients() as $ingredient) {
 
-            if ($ingredient instanceof Oignon) {
+            if ($ingredient->isOignon()) {
                 continue;
             }
             $newKebab->addIngredient($ingredient);

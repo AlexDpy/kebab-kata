@@ -10,4 +10,9 @@ class Oignon extends Ingredient
     {
         parent::__construct('oignon', true, true);
     }
+
+    public function isOignon()
+    {
+        return true;
+    }
 }

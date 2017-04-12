@@ -50,4 +50,14 @@ class Ingredient implements IngredientInterface
     {
         return $this->name;
     }
+
+    public function isFromage()
+    {
+        return false;
+    }
+
+    public function isOignon()
+    {
+        return false;
+    }
 }

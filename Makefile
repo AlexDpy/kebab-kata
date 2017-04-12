@@ -21,3 +21,5 @@ run:
 coverage:
 	firefox ./tests-coverage/index.html
 
+serve:
+	docker run -it --rm -u ${uid}:${gid} -v ${pwd}:/app -p 8080:8080 alexdpy/php:7.1 php -S 0.0.0.0:8080 -t bin

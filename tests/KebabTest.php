@@ -96,6 +96,25 @@ class KebabTest extends TestCase
         );
     }
 
+    public function testDoubleFromageTwoTimes()
+    {
+        $kebab = new Kebab([
+            new Ingredient\Pain(),
+            new Ingredient\Fromage(),
+            new Ingredient\Salade(),
+            new Ingredient\Tomate(),
+            new Ingredient\Oignon(),
+            new Ingredient\Fromage(),
+            new Ingredient\Crevette(),
+            new Ingredient\Boeuf(),
+        ]);
+
+        $this->assertEquals(
+            'pain|fromage|fromage|salade|tomate|oignon|fromage|fromage|crevette|boeuf|',
+            $kebab->doubleFromage()
+        );
+    }
+
     public function testRemoveOignon()
     {
         $kebab = new Kebab([
@@ -105,6 +124,25 @@ class KebabTest extends TestCase
             new Ingredient\Oignon(),
             new Ingredient\Fromage(),
             new Ingredient\Crevette(),
+            new Ingredient\Boeuf(),
+        ]);
+
+        $this->assertEquals(
+            'pain|salade|tomate|fromage|crevette|boeuf|',
+            $kebab->removeOignons()
+        );
+    }
+
+    public function testRemoveTwoOignon()
+    {
+        $kebab = new Kebab([
+            new Ingredient\Pain(),
+            new Ingredient\Salade(),
+            new Ingredient\Tomate(),
+            new Ingredient\Oignon(),
+            new Ingredient\Fromage(),
+            new Ingredient\Crevette(),
+            new Ingredient\Oignon(),
             new Ingredient\Boeuf(),
         ]);
 
